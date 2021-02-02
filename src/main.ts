@@ -95,13 +95,13 @@ function getIssueNumber(): number | undefined {
   return issue.number;
 }
 
-function getIssueBody(): string | undefined {
+function getIssueBody(): string {
   const issue = github.context.payload.issue;
-  if (!issue) {
-    return;
+  if (!issue || !issue.body) {
+    return "";
+  } else {
+    return issue.body;
   }
-
-  return issue.body;
 }
 
 function regexifyConfigPath(configPath: string, version: string) {

@@ -15,7 +15,7 @@ async function run() {
     const issue_body = getIssueBody();
 
     if (!issue_number) {
-      console.log('Could not get issue number or issue body from context, exiting');
+      console.log('Could not get issue number context, exiting');
       return;
     }
 
